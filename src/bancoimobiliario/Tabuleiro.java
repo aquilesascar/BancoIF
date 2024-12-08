@@ -1,13 +1,13 @@
 package bancoimobiliario;
 
-public class Tabuleiro extends Posicao{
+public class Tabuleiro{
     private Posicao posicoes[];
 
     public Tabuleiro() {
-        this.posicoes = new Posicao[39];
+        this.posicoes = new Posicao[40];
         
         this.posicoes[0] = new Fixo(200, "Inicio");
-        this.posicoes[1] = new Lote(80, "Leblon");
+        this.posicoes[1] = new Lote(80,"Leblon");
         //this.posicoes[2] = new Sortereves();
         this.posicoes[3] = new Lote(80, "Av. Presidente Vargas");
         this.posicoes[4] = new Lote(80, "Av. Nossa Senhora de Copacabana");
@@ -46,7 +46,7 @@ public class Tabuleiro extends Posicao{
         //this.posicoes[37] = new Sortereves();
         this.posicoes[38] = new Lote(190, "Jardim Paulista");
         this.posicoes[39] = new Lote(190, "Brooklin");
-        //this.posicoes[37] = new Sortereves();
+        
     }
     
 }

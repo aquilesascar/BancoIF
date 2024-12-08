@@ -1,7 +1,6 @@
 package bancoimobiliario;
 
-public class Companhia extends Propriedade{
-    private int fatorMult;
+public class Companhia extends Propriedade{    
     private int valorCompanhia;
 
     public Companhia(int valorCompanhia, String nome) {
