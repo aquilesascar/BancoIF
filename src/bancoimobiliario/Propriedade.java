@@ -7,5 +7,8 @@ public class Propriedade extends Posicao{
         super(nome);
     }
 
-    
+    public Jogador getProprietario() {
+        return proprietario;
+    }
+
 }

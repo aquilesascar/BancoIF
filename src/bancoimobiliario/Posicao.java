@@ -7,4 +7,6 @@ public class Posicao {
     public Posicao(String nome) {
         this.nome = nome;
     }
+
+    
 }
