@@ -1,6 +1,7 @@
 package bancoimobiliario;
 
 import java.util.Scanner;
+//estelaaaaa
 
 public class Lote extends Propriedade{
     private int valor;
