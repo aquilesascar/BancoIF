@@ -1,7 +1,7 @@
 package bancoimobiliario;
 
 import java.util.Scanner;
-
+//testeeee de pushhhhh
 public class Lote extends Propriedade{
     private int valor;
     private int aluguel;
