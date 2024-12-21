@@ -68,6 +68,7 @@ public class Lote extends Propriedade{
                 case 2:
                     System.out.println("Ok, então!");
                     break;
+                    //é isso
             }
         }else{
             if(this.proprietario.equals(nome)){
