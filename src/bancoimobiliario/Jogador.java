@@ -4,6 +4,7 @@ public class Jogador{
     private String nome;
     private int saldo;
     
+    
     public boolean verificaSaldo(int valor){
         if(this.saldo >= valor){
             return true;
@@ -11,10 +12,12 @@ public class Jogador{
         return false;
     }
     
-    public void decrementaSaldo(int valor){
-        this.saldo = this.saldo - valor;
+    public void atualizaSaldo(int valor){
+        this.saldo = this.saldo + valor;
         
     }
+
+
     
     public Jogador(String nome) {
         this.nome = nome;
