@@ -5,8 +5,7 @@ import java.util.Scanner;
 public class Lote extends Propriedade{
     private int valor;
     private int aluguel;
-    private int pousada;
-    private int hotel;
+    private int melhoria;
     
     public boolean temProprietario(){
         if(super.proprietario == null){
@@ -23,7 +22,16 @@ public class Lote extends Propriedade{
         }
         return false;
     }
-    
+    public boolean fazMelhoria(){
+        if(this.melhoria>10){
+            System.out.println("Esta propridade já é um hotel. Não pode mais ser melhorada.");
+            return false;
+        }
+        this.aluguel=this.aluguel*this.melhoria;
+        this.melhoria+=7;
+        return true;
+
+    }
     
     
     public void acao(Jogador nome){
@@ -60,12 +68,11 @@ public class Lote extends Propriedade{
     }
     
 
-    public Lote(int valor, String nome, int aluguel, int pousada, int hotel) {
+    public Lote(int valor, String nome, int aluguel) {
         super(nome);
         this.valor = valor;
         this.aluguel = aluguel;
-        this.pousada = pousada;
-        this.hotel = hotel;
+        this.melhoria= 3;
     }
     
 }
