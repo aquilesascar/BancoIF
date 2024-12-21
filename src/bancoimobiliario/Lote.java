@@ -45,7 +45,7 @@ public class Lote extends Propriedade{
     public void acao(Jogador nome){
         Scanner teclado = new Scanner(System.in);
         int res = 0;
-        if(temProprietario() == false){
+        if(!temProprietario()){
             do{
             System.out.println(nome.getNome() + " voce possui R$" + nome.getSaldo() + ",00");
             System.out.println("Essa propriedade custa R$" + valor);
@@ -59,7 +59,7 @@ public class Lote extends Propriedade{
             switch(res){
                 case 1: 
                     // funcao compra
-                    if(compra(nome) == false){
+                    if(!compra(nome)){
                         System.out.println("Voce não tem dinheiro suficiente!");
                     }else{
                         System.out.println("Imovel comprado!");
