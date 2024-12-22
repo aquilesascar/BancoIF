@@ -8,6 +8,9 @@ public class Fixo extends Posicao{
         this.valor = valor;
     }
 
-    
 
+    @Override
+    protected void acao(Jogador nome) {
+
+    }
 }

@@ -7,6 +7,25 @@ public class Companhia extends Propriedade{
     public Companhia(int valorCompanhia, String nome, int aluguel) {
         super(nome);
         this.valorCompanhia = valorCompanhia;
-    } 
-    
+    }
+
+    @Override
+    protected boolean compra(Jogador nome) {
+        return false;
+    }
+
+    @Override
+    protected boolean fazMelhoria(Jogador nome) {
+        return false;
+    }
+
+    @Override
+    protected int getValor() {
+        return 0;
+    }
+
+    @Override
+    protected int getAluguel() {
+        return 0;
+    }
 }

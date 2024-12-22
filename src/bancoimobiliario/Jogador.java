@@ -11,6 +11,14 @@ public class Jogador{
         }
         return false;
     }
+    public boolean transferencia(int valor,Jogador beneficiario){
+        if(this.verificaSaldo(valor)){
+            this.atualizaSaldo(-valor);
+            beneficiario.atualizaSaldo(valor);
+            return true;
+        }
+        return false;
+    }
     
     public void atualizaSaldo(int valor){
         this.saldo = this.saldo + valor;

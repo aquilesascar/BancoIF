@@ -8,6 +8,10 @@ public class Tabuleiro {
         //ainda a implementar
     }
 
+    public Posicao[] getPosicoes() {
+        return posicoes;
+    }
+
     public Tabuleiro() {
         this.posicoes = new Posicao[40];
 
@@ -21,7 +25,7 @@ public class Tabuleiro {
         this.posicoes[7] = new Companhia(200, "Companhia de Viacao", 40);
         this.posicoes[8] = new Lote(110, "Av. Reboucas", 11);
         this.posicoes[9] = new Lote(110, "Av. 9 de Julho", 12);
-        this.posicoes[10] = new Posicao("Cadeia");
+       // this.posicoes[10] = new Posicao("Cadeia");
         this.posicoes[11] = new Lote(100, "Av. Europa", 10);
         //this.posicoes[12] = new Sortereves();
         this.posicoes[13] = new Lote(100, "Rua Augusta", 9);
@@ -31,7 +35,7 @@ public class Tabuleiro {
         this.posicoes[17] = new Lote(250, "Interlagos", 35);
         this.posicoes[18] = new Fixo(200, "Lucros ou Dividendos");
         this.posicoes[19] = new Lote(250, "Morumbi", 50);
-        this.posicoes[20] = new Posicao("Parada Livre");
+       // this.posicoes[20] = new Posicao("Parada Livre");
         this.posicoes[21] = new Lote(100, "Bangu", 11);
         //this.posicoes[22] = new Sortereves();
         this.posicoes[23] = new Lote(100, "Botafogo", 10);
@@ -41,7 +45,7 @@ public class Tabuleiro {
         //this.posicoes[27] = new Sortereves();
         this.posicoes[28] = new Lote(110, "Av. Paulista", 15);
         this.posicoes[29] = new Lote(110, "Jardim Europa", 12);
-        this.posicoes[30] = new Posicao("Va para a prisao");
+       // this.posicoes[30] = new Posicao("Va para a prisao");
         this.posicoes[31] = new Lote(170, "Copacabana", 21);
         this.posicoes[32] = new Companhia(200, "Companhia de Aviacao", 50);
         this.posicoes[33] = new Lote(170, "Av. Vieira Souto", 23);
