@@ -24,24 +24,22 @@ public abstract class Propriedade extends Posicao{
 
     }
 
-
     }
 
-
     protected abstract boolean compra(Jogador nome);
-    protected abstract boolean fazMelhoria(Jogador nome);
+    protected abstract boolean fazMelhoria(Jogador nome, int dado);
     protected abstract int getValor();
 
     protected abstract int getAluguel();
 
     @Override
-    public boolean acao(Jogador nome){
+    public boolean acao(Jogador nome, int dado){
         Scanner teclado = new Scanner(System.in);
         int res = 0;
         if(!temProprietario()){
             do{
                 System.out.println(nome.getNome() + " voce possui R$" + nome.getSaldo() + ",00");
-                System.out.println("Essa propriedade custa R$" + getValor());
+                System.out.println("Essa propriedade custa R$" + getValor() + ",00");
                 System.out.println("Voce gostaria de comprar essa propriedade?\nDigite 1 para SIM \n2 para NAO");
 
                 res = teclado.nextInt(); //resposta do usuario
@@ -76,7 +74,7 @@ public abstract class Propriedade extends Posicao{
                     upgrade = teclado.nextInt();
                     switch (upgrade) {
                         case 1:
-                            fazMelhoria(nome);
+                            fazMelhoria(nome, dado);
                             return true;
 
                         case 2:

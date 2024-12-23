@@ -52,10 +52,6 @@ public class Jogador{
         
     }
 
-
-    
-
-
     public int getSaldo() {
         return saldo;
     }

@@ -8,10 +8,10 @@ public class BancoImobiliario {
        Jogador estella = new Jogador("estella");
        Jogador aquiles = new Jogador("aquiles");
 
-         tabuleiro.getPosicoes()[2].acao(estella);
-         tabuleiro.getPosicoes()[2].acao(aquiles);
-        tabuleiro.getPosicoes()[3].acao(aquiles);
-        tabuleiro.getPosicoes()[4].acao(estella);
+         tabuleiro.getPosicoes()[5].acao(estella, 3);
+         tabuleiro.getPosicoes()[5].acao(aquiles, 2);
+        tabuleiro.getPosicoes()[7].acao(aquiles, 1);
+        tabuleiro.getPosicoes()[7].acao(estella, 9);
     }
     
 }
