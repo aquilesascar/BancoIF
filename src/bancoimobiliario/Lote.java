@@ -6,11 +6,14 @@ public class Lote extends Propriedade{
     private int valor;
     private int aluguel;
     private int melhoria;
+    private int indice;
+
     public Lote(int valor, String nome, int aluguel, int indice) {
         super(nome, indice);
         this.valor = valor;
         this.aluguel = aluguel;
         this.melhoria= 3;
+        this.indice = indice;
     }
 
 
@@ -30,7 +33,7 @@ public class Lote extends Propriedade{
 
 
     @Override
-    public boolean fazMelhoria(Jogador nome){
+    public boolean fazMelhoria(Jogador nome, int dado){
         if(this.melhoria>10){
             System.out.println("Esta propridade já é um hotel. Não pode mais ser melhorada.");
             return false;

@@ -14,7 +14,7 @@ public class Sortereves extends Posicao {
     }
 
     @Override
-    protected boolean acao(Jogador jogador) {
+    protected boolean acao(Jogador jogador, int dado) {
         Random random = new Random();
         int sorte = random.nextInt(2);
         int valor;

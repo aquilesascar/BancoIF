@@ -11,7 +11,7 @@ public class Jogador{
 
     public Jogador(String nome) {
         this.nome = nome;
-        this.saldo = 80;
+        this.saldo = 1500;
         this.posicao =0;
         this.propriedades = new ArrayList<>();
     }

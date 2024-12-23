@@ -8,7 +8,7 @@ public abstract class Posicao {
         this.nome = nome;
     }
 
-    protected abstract boolean acao(Jogador nome);
+    protected abstract boolean acao(Jogador nome, int dado);
 
 
     
