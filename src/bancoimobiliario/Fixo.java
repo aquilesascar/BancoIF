@@ -10,7 +10,7 @@ public class Fixo extends Posicao{
 
 
     @Override
-    protected void acao(Jogador nome) {
-
+    protected boolean acao(Jogador nome) {
+        return true;
     }
 }

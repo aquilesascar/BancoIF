@@ -18,12 +18,12 @@ public abstract class Propriedade extends Posicao{
         return this.proprietario != null;
 
     }
-    public boolean removeProprietario(Jogador proprietario){
+    public void removeProprietario(Jogador proprietario){
         if(this.proprietario.equals(proprietario)){
             this.proprietario=null;
-            return true;
-        }
-        return false;
+
+    }
+
 
     }
 
@@ -35,7 +35,7 @@ public abstract class Propriedade extends Posicao{
     protected abstract int getAluguel();
 
     @Override
-    public void acao(Jogador nome){
+    public boolean acao(Jogador nome){
         Scanner teclado = new Scanner(System.in);
         int res = 0;
         if(!temProprietario()){
@@ -54,13 +54,17 @@ public abstract class Propriedade extends Posicao{
                     // funcao compra
                     if(!compra(nome)){
                         System.out.println("Voce não tem dinheiro suficiente!");
+
                     }else{
                         System.out.println("Imóvel comprado!");
+
                     }
-                    break;
+                    return true;
+
                 case 2:
                     System.out.println("Ok, então!");
-                    break;
+                    return true;
+
                 //é isso
             }
         }else{
@@ -73,10 +77,11 @@ public abstract class Propriedade extends Posicao{
                     switch (upgrade) {
                         case 1:
                             fazMelhoria(nome);
-                            break;
+                            return true;
+
                         case 2:
                             System.out.println("Eita! Ta bom, ne?!");
-                            break;
+                            return true;
                         default:
                             System.out.println("Voce digitou um numero errado. Tente novamente!");
                     }
@@ -85,14 +90,16 @@ public abstract class Propriedade extends Posicao{
                 System.out.println(nome.getNome()+ ", este lote e de: " + this.proprietario.getNome() +"\nVoce deve pagar o valor de R$" + getAluguel());
                 if(nome.transferencia(getValor(),this.proprietario)){
                     System.out.println("Aluguel pago com sucesso!");
+                    return true;
 
                  }else{
                     System.out.println(nome.getNome()+ ", você está quebrado! Foi eliminado do jogo.");
-
+                    return false;
                     //implementar função que deleta jogador
                 }
             }
         }
+        return true;
     }
 
 }
