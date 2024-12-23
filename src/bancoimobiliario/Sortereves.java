@@ -4,11 +4,13 @@ import java.util.Random;
 
 public class Sortereves extends Posicao {
 
-    private static final int GANHO_MAXIMO = 151; //o máximo possível a ganhar
-    private static final int PERDA_MAXIMA = 81;  //o máximo possivel a perder
+    private int GANHO_MAXIMO;
+    private int PERDA_MAXIMA;
 
     public Sortereves() {
         super("Sorte ou Revés");
+        this.GANHO_MAXIMO = 151; //o máximo possível a ganhar
+        this.PERDA_MAXIMA = 81; //o máximo possivel a perder
     }
 
     @Override
