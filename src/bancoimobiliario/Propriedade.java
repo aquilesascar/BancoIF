@@ -18,7 +18,14 @@ public abstract class Propriedade extends Posicao{
         return this.proprietario != null;
 
     }
+    public boolean removeProprietario(Jogador proprietario){
+        if(this.proprietario.equals(proprietario)){
+            this.proprietario=null;
+            return true;
+        }
+        return false;
 
+    }
 
 
     protected abstract boolean compra(Jogador nome);
@@ -81,6 +88,7 @@ public abstract class Propriedade extends Posicao{
 
                  }else{
                     System.out.println(nome.getNome()+ ", você está quebrado! Foi eliminado do jogo.");
+
                     //implementar função que deleta jogador
                 }
             }

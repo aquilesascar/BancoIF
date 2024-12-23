@@ -11,8 +11,7 @@ public class BancoImobiliario {
          tabuleiro.getPosicoes()[3].acao(estella);
          tabuleiro.getPosicoes()[4].acao(aquiles);
         tabuleiro.getPosicoes()[3].acao(aquiles);
-        tabuleiro.getPosicoes()[3].acao(aquiles);
-        tabuleiro.getPosicoes()[3].acao(estella);
+        tabuleiro.getPosicoes()[4].acao(estella);
     }
     
 }

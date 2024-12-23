@@ -33,6 +33,17 @@ public class Tabuleiro {
         sc.close();
     }
 
+    public void removeJogador(Jogador j) {
+        for(int i: j.getPropriedades()){
+            if(this.posicoes[i] instanceof Propriedade){
+                // funão que remove o proprietario do lote ou companhia
+                if(((Propriedade) this.posicoes[i]).removeProprietario(j)){
+                    //implementar remover jogador do vetor do tabuleiro
+                }
+            }
+
+        }
+    }
 
     public  Tabuleiro() {
         this.posicoes = new Posicao[40];
