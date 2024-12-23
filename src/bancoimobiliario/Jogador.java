@@ -1,9 +1,36 @@
 package bancoimobiliario;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class Jogador{
     private String nome;
     private int saldo;
-    
+    private int posicao;
+    private ArrayList<Integer> propriedades;
+
+    public Jogador(String nome) {
+        this.nome = nome;
+        this.saldo = 1500;
+        this.posicao =0;
+        this.propriedades = new ArrayList<>();
+    }
+
+    public ArrayList<Integer> getPropriedades() {
+        return propriedades;
+    }
+
+    public void addPropriedade(int propriedade){
+        this.propriedades.add(propriedade);
+    }
+
+
+
+    public String cadastrarJogador(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Digite o nome do jogador: ");
+        return  nome = sc.nextLine();
+    }
     
     public boolean verificaSaldo(int valor){
         if(this.saldo >= valor){
@@ -27,10 +54,7 @@ public class Jogador{
 
 
     
-    public Jogador(String nome) {
-        this.nome = nome;
-        this.saldo = 1500;
-    }
+
 
     public int getSaldo() {
         return saldo;

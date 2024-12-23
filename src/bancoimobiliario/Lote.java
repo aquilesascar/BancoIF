@@ -6,8 +6,8 @@ public class Lote extends Propriedade{
     private int valor;
     private int aluguel;
     private int melhoria;
-    public Lote(int valor, String nome, int aluguel) {
-        super(nome);
+    public Lote(int valor, String nome, int aluguel, int indice) {
+        super(nome, indice);
         this.valor = valor;
         this.aluguel = aluguel;
         this.melhoria= 3;
@@ -19,6 +19,7 @@ public class Lote extends Propriedade{
         if(comprador.verificaSaldo(this.valor)){
             comprador.atualizaSaldo(-this.valor);
             this.proprietario = comprador;
+            comprador.addPropriedade(super.indice);
             return true;
         }
         return false;

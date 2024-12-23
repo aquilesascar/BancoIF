@@ -3,10 +3,12 @@ package bancoimobiliario;
 import java.util.Scanner;
 
 public abstract class Propriedade extends Posicao{
-    Jogador proprietario;
+    protected Jogador proprietario;
+    protected int indice;
 
-    public Propriedade(String nome) {
+    public Propriedade(String nome, int indice) {
         super(nome);
+        this.indice=indice;
     }
 
     public Jogador getProprietario() {
@@ -73,12 +75,13 @@ public abstract class Propriedade extends Posicao{
                     }
                 }while(upgrade <1 || upgrade >2);
             }else if(this.proprietario!=null){
-                System.out.println("Este lote e de: " + this.proprietario.getNome() +"\nVoce deve pagar o valor de R$" + getAluguel());
+                System.out.println(nome.getNome()+ ", este lote e de: " + this.proprietario.getNome() +"\nVoce deve pagar o valor de R$" + getAluguel());
                 if(nome.transferencia(getValor(),this.proprietario)){
                     System.out.println("Aluguel pago com sucesso!");
 
                  }else{
-                    System.out.println("Você não tem dinheiro suficiente!");
+                    System.out.println(nome.getNome()+ ", você está quebrado! Foi eliminado do jogo.");
+                    //implementar função que deleta jogador
                 }
             }
         }
