@@ -24,7 +24,9 @@ public class Jogador{
         this.propriedades.add(propriedade);
     }
 
-
+    public void alteraPosicao(int somaDados){
+        this.posicao += somaDados;
+    }
 
     public String cadastrarJogador(){
         Scanner sc = new Scanner(System.in);
@@ -59,5 +61,8 @@ public class Jogador{
     public String getNome() {
         return nome;
     }
-    
+
+    public int getPosicao() {
+        return posicao;
+    }
 }

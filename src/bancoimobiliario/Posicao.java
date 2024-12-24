@@ -11,6 +11,7 @@ public abstract class Posicao {
     protected abstract boolean acao(Jogador nome, int dado);
 
 
-
-    
+    public String getNome() {
+        return nome;
+    }
 }

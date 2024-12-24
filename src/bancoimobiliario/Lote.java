@@ -47,7 +47,7 @@ public class Lote extends Propriedade{
         if (nome.verificaSaldo(this.aluguel)){
             this.aluguel=this.aluguel*this.melhoria;
             this.melhoria+=7;
-            System.out.println("Melhoria feita. Agora seu aluguel é R$" + this.aluguel + ",00");
+            System.out.println("Melhoria feita. Agora seu aluguel é R$" + this.aluguel + ",00\n");
             return true;
 
         }
@@ -69,7 +69,7 @@ public class Lote extends Propriedade{
                     fazMelhoria(proprietario);
 
                 case 2:
-                    System.out.println("Eita! Ta bom, ne?!");
+                    System.out.println("Eita! Ta bom então, ne?!");
 
                 default:
                     System.out.println("Voce digitou um numero errado. Tente novamente!");
