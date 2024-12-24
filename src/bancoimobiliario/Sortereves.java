@@ -22,16 +22,16 @@ public class Sortereves extends Posicao {
         if (sorte == 1) {
             valor = random.nextInt(1, GANHO_MAXIMO);
             jogador.atualizaSaldo(valor);
-            System.out.println(jogador.getNome() + " teve sorte! Ganhou R$ " + valor + ",00.");
+            System.out.println(jogador.getNome() + " teve sorte! Ganhou R$ " + valor + ",00.\n");
             return true;
         } else { // Revés
             valor = random.nextInt(1, PERDA_MAXIMA);
             if(jogador.verificaSaldo(valor)){
-                System.out.println(jogador.getNome() + " teve revés! Perdeu R$ " + valor + ",00.");
+                System.out.println(jogador.getNome() + " teve revés! Perdeu R$ " + valor + ",00.\n");
                 jogador.atualizaSaldo(-valor);
                 return true;
             }else{
-                System.out.println(jogador.getNome() + " teve um reves e ficou sem saldo!");
+                System.out.println(jogador.getNome() + " teve um reves e ficou sem saldo!\n");
                 return false;
             }
 

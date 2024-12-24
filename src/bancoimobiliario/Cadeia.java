@@ -1,4 +1,5 @@
 package bancoimobiliario;
 
-public class Transacao {
+public class Cadeia {
+
 }

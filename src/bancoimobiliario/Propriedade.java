@@ -36,14 +36,14 @@ public abstract class Propriedade extends Posicao{
 
     @Override
     public boolean acao(Jogador nome, int dado){
-        System.out.println("Você caiu em "+super.);
+        System.out.println(nome.getNome() + ", você caiu em " + super.getNome() + "\n");
         Scanner teclado = new Scanner(System.in);
         int res = 0;
         if(!temProprietario()){
             do{
-                System.out.println(nome.getNome() + " voce possui R$" + nome.getSaldo() + ",00");
-                System.out.println("Essa propriedade custa R$" + getValor() + ",00");
-                System.out.println("Voce gostaria de comprar essa propriedade?\nDigite 1 para SIM \n2 para NAO");
+                System.out.println("Voce possui R$" + nome.getSaldo() + ",00\n");
+                System.out.println("Essa propriedade custa R$" + getValor() + ",00\n");
+                System.out.println("Voce gostaria de comprar essa propriedade?\n\nDigite 1 para SIM \nDigite 2 para NAO");
 
                 res = teclado.nextInt(); //resposta do usuario
                 if(res<1 || res >2){
@@ -57,7 +57,8 @@ public abstract class Propriedade extends Posicao{
                         System.out.println("Voce não tem dinheiro suficiente!");
 
                     }else{
-                        System.out.println("Imóvel comprado!");
+                        System.out.println("Imóvel comprado!\n");
+                        System.out.println("Obrigado por comprar essa propriedade! Seu saldo é de: " + nome.getSaldo() + ",00");
 
                     }
                     return true;
@@ -72,7 +73,7 @@ public abstract class Propriedade extends Posicao{
             if(this.proprietario== nome){
                 voceeProprietario(nome);
             }else if(this.proprietario!=null){
-                System.out.println(nome.getNome()+ ", este lote e de: " + this.proprietario.getNome() +"\nVoce deve pagar o valor de R$" + valorAluguel(dado));
+                System.out.println(nome.getNome()+ ", este lote e de: " + this.proprietario.getNome() +"\n\nVoce deve pagar o valor de R$" + valorAluguel(dado) + ",00");
                 if(nome.transferencia(valorAluguel(dado),this.proprietario)){
                     System.out.println("Aluguel pago com sucesso!");
                     return true;

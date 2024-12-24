@@ -5,9 +5,14 @@ import java.util.Scanner;
 public class Tabuleiro {
     protected Jogador[] jogadores;
     protected Posicao posicoes[];
+    protected int contadorJogadores;
 
     public void iniciarJogo() {
         //ainda a implementar
+    }
+
+    public Jogador[] getJogadores() {
+        return jogadores;
     }
 
     public Posicao[] getPosicoes() {
@@ -17,10 +22,10 @@ public class Tabuleiro {
         Scanner sc = new Scanner(System.in);
         int numJogador;
         do {
-            System.out.println("Digite o número de jodagores de 2 a 6:");
+            System.out.println("Digite o número de jodagores de 2 a 6: ");
              numJogador = sc.nextInt();
             if (numJogador < 2 || numJogador > 6) {
-                System.out.println("O mínimo de jogadores é 2 e máximo 6");
+                System.out.println("O mínimo de jogadores é 2 e máximo 6!");
             }
         }while(numJogador<2 || numJogador>6);
 
@@ -50,7 +55,6 @@ public class Tabuleiro {
         }
 
         }
-
 
     public  Tabuleiro() {
         this.posicoes = new Posicao[40];

@@ -37,7 +37,7 @@ public class Companhia extends Propriedade{
 
     @Override
     protected void voceeProprietario(Jogador proprietario) {
-        System.out.println("Você é o proprirtário! Não é necessário pagar o aluguel.");
+        System.out.println("Você é o proprietário! Não é necessário pagar o aluguel. Uhuuuuu!");
     }
 
 
