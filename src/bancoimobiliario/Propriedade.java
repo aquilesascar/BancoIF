@@ -36,6 +36,7 @@ public abstract class Propriedade extends Posicao{
 
     @Override
     public boolean acao(Jogador nome, int dado){
+        System.out.println("Você caiu em "+super.);
         Scanner teclado = new Scanner(System.in);
         int res = 0;
         if(!temProprietario()){
