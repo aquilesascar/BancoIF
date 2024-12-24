@@ -24,13 +24,11 @@ public class Companhia extends Propriedade{
     }
 
     @Override
-    protected boolean fazMelhoria(Jogador nome, int dado) {
-        if(nome.verificaSaldo(this.aluguel)){
-            nome.atualizaSaldo(-this.aluguel);
-            this.aluguel *= dado;
-        }
-        return false;
+    protected int valorAluguel(int dado) {
+        int novoAluguel =this.aluguel*dado;
+        return novoAluguel;
     }
+
 
     @Override
     protected int getValor() {
@@ -38,7 +36,9 @@ public class Companhia extends Propriedade{
     }
 
     @Override
-    protected int getAluguel() {
-        return this.aluguel;
+    protected void voceeProprietario(Jogador proprietario) {
+        System.out.println("Você é o proprirtário! Não é necessário pagar o aluguel.");
     }
+
+
 }

@@ -27,10 +27,12 @@ public abstract class Propriedade extends Posicao{
     }
 
     protected abstract boolean compra(Jogador nome);
-    protected abstract boolean fazMelhoria(Jogador nome, int dado);
+
+    protected abstract int valorAluguel(int dado);
+    protected abstract void voceeProprietario(Jogador proprietario);
     protected abstract int getValor();
 
-    protected abstract int getAluguel();
+
 
     @Override
     public boolean acao(Jogador nome, int dado){
@@ -67,26 +69,10 @@ public abstract class Propriedade extends Posicao{
             }
         }else{
             if(this.proprietario== nome){
-                int upgrade;
-                do {
-                    System.out.println("Você é o dono desta propiriedade.");
-                    System.out.println("Voce gostaria de fazer uma melhoria?\n Digite 1 para SIM \n 2 para NÂO?");
-                    upgrade = teclado.nextInt();
-                    switch (upgrade) {
-                        case 1:
-                            fazMelhoria(nome, dado);
-                            return true;
-
-                        case 2:
-                            System.out.println("Eita! Ta bom, ne?!");
-                            return true;
-                        default:
-                            System.out.println("Voce digitou um numero errado. Tente novamente!");
-                    }
-                }while(upgrade <1 || upgrade >2);
+                voceeProprietario(nome);
             }else if(this.proprietario!=null){
-                System.out.println(nome.getNome()+ ", este lote e de: " + this.proprietario.getNome() +"\nVoce deve pagar o valor de R$" + getAluguel());
-                if(nome.transferencia(getValor(),this.proprietario)){
+                System.out.println(nome.getNome()+ ", este lote e de: " + this.proprietario.getNome() +"\nVoce deve pagar o valor de R$" + valorAluguel(dado));
+                if(nome.transferencia(valorAluguel(dado),this.proprietario)){
                     System.out.println("Aluguel pago com sucesso!");
                     return true;
 

@@ -11,5 +11,6 @@ public abstract class Posicao {
     protected abstract boolean acao(Jogador nome, int dado);
 
 
+
     
 }

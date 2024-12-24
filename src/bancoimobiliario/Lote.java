@@ -27,13 +27,18 @@ public class Lote extends Propriedade{
         }
         return false;
     }
+
+    @Override
+    protected int valorAluguel(int dado) {
+        return this.aluguel;
+    }
     //função faz melhoria
     //verifica se a propriedadea já é um hotel e faz a conta
     //ex:valorAluguel = valorAluguel * melhoria
 
 
-    @Override
-    public boolean fazMelhoria(Jogador nome, int dado){
+
+    public boolean fazMelhoria(Jogador nome){
         if(this.melhoria>10){
             System.out.println("Esta propridade já é um hotel. Não pode mais ser melhorada.");
             return false;
@@ -49,16 +54,32 @@ public class Lote extends Propriedade{
         return false;
     }
 
+
+
+    @Override
+    protected void voceeProprietario(Jogador proprietario) {
+        Scanner teclado = new Scanner(System.in);
+        int upgrade;
+        do {
+            System.out.println("Você é o dono desta propiriedade.");
+            System.out.println("Voce gostaria de fazer uma melhoria?\n Digite 1 para SIM \n 2 para NÂO?");
+            upgrade = teclado.nextInt();
+            switch (upgrade) {
+                case 1:
+                    fazMelhoria(proprietario);
+
+                case 2:
+                    System.out.println("Eita! Ta bom, ne?!");
+
+                default:
+                    System.out.println("Voce digitou um numero errado. Tente novamente!");
+            }
+        }while(upgrade <1 || upgrade >2);
+    }
+
     @Override
     protected int getValor() {
-        return this.valor;    }
-
-
-
-
-    @Override
-    protected int getAluguel() {
-        return this.aluguel;
+        return this.valor;
     }
 
 
