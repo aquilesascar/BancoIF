@@ -44,11 +44,15 @@ public abstract class Propriedade extends Posicao{
                 System.out.println("Voce possui R$" + nome.getSaldo() + ",00\n");
                 System.out.println("Essa propriedade custa R$" + getValor() + ",00\n");
                 System.out.println("Voce gostaria de comprar essa propriedade?\n\nDigite 1 para SIM \nDigite 2 para NAO");
+               //Captura a resposta da usuário com verificação
 
-                res = teclado.nextInt(); //resposta do usuario
-                if(res<1 || res >2){
-                    System.out.println("Vc digitou um número incorreto. Tente novamente!");
-                }
+                    res = teclado.nextInt(); //resposta do usuario
+
+                    if (res < 1 || res > 2) {
+                        System.out.println("Vc digitou um número incorreto. Tente novamente!");
+
+                    }
+
             }while(res<1 || res >2);
             switch(res){
                 case 1:
@@ -61,8 +65,8 @@ public abstract class Propriedade extends Posicao{
                         System.out.println("Obrigado por comprar essa propriedade! Seu saldo é de: " + nome.getSaldo() + ",00");
 
                     }
-                    return true;
 
+                    return true;
                 case 2:
                     System.out.println("Ok, então!");
                     return true;
@@ -70,7 +74,7 @@ public abstract class Propriedade extends Posicao{
                 //é isso
             }
         }else{
-            if(this.proprietario== nome){
+            if(this.proprietario.equals(nome)){
                 voceeProprietario(nome);
             }else if(this.proprietario!=null){
                 System.out.println(nome.getNome()+ ", este lote e de: " + this.proprietario.getNome() +"\n\nVoce deve pagar o valor de R$" + valorAluguel(dado) + ",00");

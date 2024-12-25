@@ -3,9 +3,9 @@ package bancoimobiliario;
 import java.util.Scanner;
 
 public class Tabuleiro {
-    protected Jogador[] jogadores;
-    protected Posicao posicoes[];
-    protected int contadorJogadores;
+    private Jogador[] jogadores;
+    private Posicao posicoes[];
+    private int numJogadores;
 
     public void iniciarJogo() {
         //ainda a implementar
@@ -20,22 +20,23 @@ public class Tabuleiro {
     }
     public void addJogador() {
         Scanner sc = new Scanner(System.in);
-        int numJogador;
+        
         do {
             System.out.println("Digite o número de jodagores de 2 a 6: ");
-             numJogador = sc.nextInt();
-            if (numJogador < 2 || numJogador > 6) {
+             this.numJogadores= sc.nextInt();
+            if (this.numJogadores < 2 || this.numJogadores > 6) {
                 System.out.println("O mínimo de jogadores é 2 e máximo 6!");
             }
-        }while(numJogador<2 || numJogador>6);
+        }while(this.numJogadores<2 || this.numJogadores>6);
 
-        this.jogadores = new Jogador[numJogador];
-        System.out.println("Digite o número dos "+ numJogador+".");
-        for (int i = 0; i < numJogador; i++) {
+        this.jogadores = new Jogador[this.numJogadores];
+        System.out.println("Digite o nome dos Jogadores");
+        sc.nextLine();
+        for (int i = 0; i < this.numJogadores; i++) {
             this.jogadores[i]= new Jogador(sc.nextLine());
         }
 
-        sc.close();
+
     }
 
     public void removeJogador(Jogador j) {
@@ -50,13 +51,19 @@ public class Tabuleiro {
         for(int i=0;i<this.jogadores.length;i++){
             if(this.jogadores[i].equals(j)){
                 this.jogadores[i]=null;
+                this.numJogadores--;
             }
 
         }
 
         }
 
+    public int getNumJogadores() {
+        return numJogadores;
+    }
+
     public  Tabuleiro() {
+        this.numJogadores=0;
         this.posicoes = new Posicao[40];
 
         this.posicoes[0] = new Fixo(200, "Inicio");
@@ -69,7 +76,7 @@ public class Tabuleiro {
         this.posicoes[7] = new Companhia(200, "Companhia de Viacao", 40,7);
         this.posicoes[8] = new Lote(110, "Av. Reboucas", 11,8);
         this.posicoes[9] = new Lote(110, "Av. 9 de Julho", 12,9);
-        //this.posicoes[10] = new Posicao("Cadeia");
+        this.posicoes[10] = new Cadeia("Cadeia");
         this.posicoes[11] = new Lote(100, "Av. Europa", 10,11);
         this.posicoes[12] = new Sortereves();
         this.posicoes[13] = new Lote(100, "Rua Augusta", 9,13);
@@ -89,7 +96,7 @@ public class Tabuleiro {
         this.posicoes[27] = new Sortereves();
         this.posicoes[28] = new Lote(110, "Av. Paulista", 15,28);
         this.posicoes[29] = new Lote(110, "Jardim Europa", 12,29);
-        //this.posicoes[30] = new Posicao("Va para a prisao");
+        this.posicoes[30] = new Cadeia("Va para a prisao");
         this.posicoes[31] = new Lote(170, "Copacabana", 21,31);
         this.posicoes[32] = new Companhia(200, "Companhia de Aviacao", 50,32);
         this.posicoes[33] = new Lote(170, "Av. Vieira Souto", 23,33);

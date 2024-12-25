@@ -8,12 +8,26 @@ public class Jogador{
     private int saldo;
     private int posicao;
     private ArrayList<Integer> propriedades;
+    private boolean preso;
 
     public Jogador(String nome) {
         this.nome = nome;
         this.saldo = 1500;
         this.posicao =0;
         this.propriedades = new ArrayList<>();
+        this.preso = false;
+    }
+
+    public boolean isPreso() {
+        return preso;
+    }
+
+    public void solta(){
+        this.preso = false;
+    }
+
+    public void prende(){
+        this.preso = true;
     }
 
     public ArrayList<Integer> getPropriedades() {
@@ -28,11 +42,6 @@ public class Jogador{
         this.posicao += somaDados;
     }
 
-    public String cadastrarJogador(){
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Digite o nome do jogador: ");
-        return  nome = sc.nextLine();
-    }
     
     public boolean verificaSaldo(int valor){
         if(this.saldo >= valor){
