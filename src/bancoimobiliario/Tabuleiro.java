@@ -42,14 +42,14 @@ public class Tabuleiro {
     public void removeJogador(Jogador j) {
         for(int i: j.getPropriedades()){
             if(this.posicoes[i] instanceof Propriedade){
-                // funão que remove o proprietario do lote ou companhia
+                // função que remove o proprietario do lote ou companhia
                 ((Propriedade) this.posicoes[i]).removeProprietario(j);
 
                 }
             }
         //removendo  jogador do array de jogadores
         for(int i=0;i<this.jogadores.length;i++){
-            if(this.jogadores[i].equals(j)){
+            if(this.jogadores[i].equals(j) && this.jogadores[i]!=null){
                 this.jogadores[i]=null;
                 this.numJogadores--;
             }
@@ -86,11 +86,11 @@ public class Tabuleiro {
         this.posicoes[17] = new Lote(250, "Interlagos", 35,17);
         this.posicoes[18] = new Fixo(200, "Lucros ou Dividendos");
         this.posicoes[19] = new Lote(250, "Morumbi", 50,19);
-        // this.posicoes[20] = new Posicao("Parada Livre");
+        this.posicoes[20] = new Fixo(0,"Parada Livre");
         this.posicoes[21] = new Lote(100, "Bangu", 11,21);
         this.posicoes[22] = new Sortereves();
         this.posicoes[23] = new Lote(100, "Botafogo", 10,23);
-        this.posicoes[24] = new Fixo(-200, "Imposto de Renda");
+        this.posicoes[24] = new Fixo(200, "Imposto de Renda");
         this.posicoes[25] = new Companhia(200, "Companhia de Navegacao", 40,25);
         this.posicoes[26] = new Lote(110, "Av. Brasil", 13,26);
         this.posicoes[27] = new Sortereves();
