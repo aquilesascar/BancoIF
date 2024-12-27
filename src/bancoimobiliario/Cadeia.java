@@ -10,7 +10,7 @@ public class Cadeia extends Posicao {
     protected boolean acao(Jogador nome, int dado) {
         //Caso o jagador tenha caido numa casa que manda para a cadeia
         if(nome.getPosicao()==30){
-            System.out.println("Parabéns! Além de você ter q voltar 20 casas, ainda ganhárá uma estadia na Cadeia por uma rodada");
+            System.out.println("Parabéns! Além de você ter q voltar 20 casas, ainda ganhará uma estadia na Cadeia por uma rodada");
             nome.alteraPosicao(-20);
 
         }else {

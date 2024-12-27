@@ -1,12 +1,13 @@
 package bancoimobiliario;
 
 import java.util.Random;
+import java.util.Scanner;
 
 
 public class  Jogo {
     public static void iniciaJogo(){
         Random random = new Random();
-
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Iniciando o jogo...");
         Tabuleiro tabuleiro = new Tabuleiro();
         tabuleiro.addJogador();
@@ -17,6 +18,9 @@ public class  Jogo {
             for (int i = 0; i < tabuleiro.getJogadores().length; i++) {
                 //Verificando se o jogador não foi removido ou se está preo em cadeia
                 if (tabuleiro.getJogadores()[i] != null && !tabuleiro.getJogadores()[i].isPreso()) {
+                    // Solicitar que o jogador aperte ENTER para jogar
+                    System.out.println(tabuleiro.getJogadores()[i].getNome() + ", aperte ENTER para jogar os dados!");
+                    scanner.nextLine(); // Aguarda o jogador pressionar ENTER
                     //Sorteando os dados
                     int dado = random.nextInt(6) + 1;
                     int dado2 = random.nextInt(6) + 1;
