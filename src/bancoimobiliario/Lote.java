@@ -67,10 +67,10 @@ public class Lote extends Propriedade{
             switch (upgrade) {
                 case 1:
                     fazMelhoria(proprietario);
-
+                    break;
                 case 2:
                     System.out.println("Eita! Ta bom então, ne?!");
-
+                    break;
                 default:
                     System.out.println("Voce digitou um numero errado. Tente novamente!");
             }
