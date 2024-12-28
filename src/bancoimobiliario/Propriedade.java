@@ -60,12 +60,12 @@ public abstract class Propriedade extends Posicao{
                     if(!compra(nome)){
                         System.out.println("Voce não tem dinheiro suficiente!");
                         return true;
+
                     }else{
                         System.out.println("Imóvel comprado!\n");
                         System.out.println("Obrigado por comprar essa propriedade! Seu saldo é de: " + nome.getSaldo() + ",00");
                         return true;
                     }
-
 
                 case 2:
                     System.out.println("Ok, então!");
