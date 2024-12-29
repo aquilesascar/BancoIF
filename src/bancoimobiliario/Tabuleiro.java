@@ -7,9 +7,7 @@ public class Tabuleiro {
     private Posicao posicoes[];
     private int numJogadores;
 
-    public void iniciarJogo() {
-        //ainda a implementar
-    }
+
 
     public Jogador[] getJogadores() {
         return jogadores;
