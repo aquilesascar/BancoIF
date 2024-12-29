@@ -1,71 +1,77 @@
 package bancoimobiliario;
-
 import java.util.Scanner;
 
 public class Tabuleiro {
+    // Guarda a lista de jogadores
     private Jogador[] jogadores;
+    // Guarda as casas do tabuleiro
     private Posicao posicoes[];
+    // Diz quantos jogadores tem na partida
     private int numJogadores;
 
-    public void iniciarJogo() {
-        //ainda a implementar
-    }
-
+    //método para pegar a lista de jogadores
     public Jogador[] getJogadores() {
         return jogadores;
     }
 
+    // Método para pegar a lista de casas
     public Posicao[] getPosicoes() {
         return posicoes;
     }
+
+    // Método para adicionar jogadores
     public void addJogador() {
         Scanner sc = new Scanner(System.in);
-        
+
+        // Pede o número de jogadores até ser um número bom (entre 2 e 6)
         do {
-            System.out.println("Digite o número de jodagores de 2 a 6: ");
-             this.numJogadores= sc.nextInt();
+            System.out.println("Digite o número de jogadores de 2 a 6: ");
+            this.numJogadores= sc.nextInt();
             if (this.numJogadores < 2 || this.numJogadores > 6) {
                 System.out.println("O mínimo de jogadores é 2 e máximo 6!");
             }
         }while(this.numJogadores<2 || this.numJogadores>6);
 
+        // Cria um espaço para guardar os jogadores
         this.jogadores = new Jogador[this.numJogadores];
         System.out.println("Digite o nome dos Jogadores");
-        sc.nextLine();
+        sc.nextLine(); // Limpa o "enter" que ficou da linha de cima
+        // Pede o nome de cada jogador e cria um novo jogador para ele
         for (int i = 0; i < this.numJogadores; i++) {
             this.jogadores[i]= new Jogador(sc.nextLine());
         }
-
-
     }
 
+    // Método para tirar um jogador do jogo
     public void removeJogador(Jogador j) {
+        // Olha as propriedades do jogador que vai sair
         for(int i: j.getPropriedades()){
+            // Se a casa for uma propriedade (lote ou companhia)
             if(this.posicoes[i] instanceof Propriedade){
-                // função que remove o proprietario do lote ou companhia
+                // Tira o jogador da lista de donos daquela propriedade
                 ((Propriedade) this.posicoes[i]).removeProprietario(j);
-
-                }
             }
-        //removendo  jogador do array de jogadores
+        }
+        // Procura o jogador na lista e tira ele de lá
         for(int i=0;i<this.jogadores.length;i++){
-            if(this.jogadores[i].equals(j) && this.jogadores[i]!=null){
-                this.jogadores[i]=null;
-                this.numJogadores--;
+            if(this.jogadores[i]!=null && this.jogadores[i].equals(j)){
+                this.jogadores[i]=null; // Tira o jogador
+                this.numJogadores--; // Diminui o número de jogadores
             }
-
         }
+    }
 
-        }
-
+    // Método para saber quantos jogadores tem
     public int getNumJogadores() {
         return numJogadores;
     }
 
+    // Método que cria o tabuleiro quando o jogo começa
     public  Tabuleiro() {
-        this.numJogadores=0;
-        this.posicoes = new Posicao[40];
+        this.numJogadores=0; // Começa com zero jogadores
+        this.posicoes = new Posicao[40]; // Cria 40 espaços para as casas
 
+        // Cria as casas do tabuleiro (Lotes, Companhias, etc)
         this.posicoes[0] = new Fixo(200, "Inicio");
         this.posicoes[1] = new Lote(80, "Leblon", 8,1);
         this.posicoes[2] = new Sortereves();
@@ -106,7 +112,6 @@ public class Tabuleiro {
         this.posicoes[37] = new Sortereves();
         this.posicoes[38] = new Lote(190, "Jardim Paulista", 28,38);
         this.posicoes[39] = new Lote(190, "Brooklin", 22,39);
-
     }
 
 }
