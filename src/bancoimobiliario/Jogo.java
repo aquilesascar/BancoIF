@@ -52,7 +52,9 @@ public class  Jogo {
                 }
             }
         }
+        //Mostrando quem foi o jogador vencedor
         System.out.println("Parabéns!!! O jogador vencedor foi:");
+        //procurando no for o único jogador que restou
         for (int i = 0; i < tabuleiro.getJogadores().length; i++) {
             if (tabuleiro.getJogadores()[i] != null) {
                 System.out.println(tabuleiro.getJogadores()[i].getNome());
