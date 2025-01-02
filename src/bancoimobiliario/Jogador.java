@@ -10,7 +10,7 @@ public class Jogador{
     private ArrayList<Integer> propriedades; //propiredades que o Jogador adiquirir
     private boolean preso; //Variavel booleana que india se o jogador está na cadeia
 
-    //Construtor que inicia todos os atributos de jaogador
+    //Construtor que inicia todos os atributos de jogador
     public Jogador(String nome) {
         this.nome = nome;
         this.saldo = 1500;
