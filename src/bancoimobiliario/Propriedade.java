@@ -65,12 +65,14 @@ public abstract class Propriedade extends Posicao{
                 case 1:
                     // Tenta comprar uma propridade
                     if(!compra(nome)){
-                        System.out.println("Voce não tem dinheiro suficiente!");
+                        System.out.println("Voce não tem dinheiro suficiente!\n");
+                        System.out.println("-------------------");
                         return true;
 
                     }else{
                         System.out.println("Imóvel comprado!\n");
                         System.out.println("Obrigado por comprar essa propriedade! Seu saldo é de: " + nome.getSaldo() + ",00");
+                        System.out.println("-------------------");
                         return true;
                     }
 
@@ -91,7 +93,8 @@ public abstract class Propriedade extends Posicao{
                 System.out.println(nome.getNome()+ ", este lote e de: " + this.proprietario.getNome() +"\n\nVoce deve pagar o valor de R$" + valorAluguel(dado) + ",00");
                 //Método que verificará se o jogador tem condiçoes de pagar o aluguel
                 if(nome.transferencia(valorAluguel(dado),this.proprietario)){
-                    System.out.println("Aluguel pago com sucesso!");
+                    System.out.println("Aluguel pago com sucesso!\n");
+                    System.out.println("-------------------");
                     return true;
 
                  }else{

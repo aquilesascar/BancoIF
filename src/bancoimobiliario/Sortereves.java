@@ -22,11 +22,13 @@ public class Sortereves extends Posicao {
             int valor = random.nextInt(GANHO_MAXIMO) + 1; //Gera um valor aleatório de ganho
             jogador.atualizaSaldo(valor); //Adiciona o valor ao saldo do jogador
             System.out.println(jogador.getNome() + " teve sorte! Ganhou R$ " + valor + ",00.\n");
+            System.out.println("-------------------");
             return true;
         } else { // Se não, o jogador tem revés
             int valor = random.nextInt(PERDA_MAXIMA) + 1; //Gera um valor aleatório de perda
             if (jogador.verificaSaldo(valor)) { //Verifica se o jogador tem saldo suficiente para perder
                 System.out.println(jogador.getNome() + " teve revés! Perdeu R$ " + valor + ",00.\n");
+                System.out.println("-------------------");
                 jogador.atualizaSaldo(-valor); //Subtrai o valor do saldo do jogador
                 return true;
             } else {

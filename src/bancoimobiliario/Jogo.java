@@ -33,7 +33,7 @@ public class  Jogo {
                         // reajustando a posição
                         tabuleiro.getJogadores()[i].alteraPosicao(-40);
                         if(tabuleiro.getJogadores()[i].getPosicao()>0){
-                            System.out.println("Você passou pelo Início navamente e Ganhou R$200.00");
+                            System.out.println("Você passou pelo Início novamente e Ganhou R$200.00");
                             tabuleiro.getJogadores()[i].atualizaSaldo(200);
                         }
                     }
@@ -53,7 +53,7 @@ public class  Jogo {
             }
         }
         //Mostrando quem foi o jogador vencedor
-        System.out.println("Parabéns!!! O jogador vencedor foi:");
+        System.out.println("Parabéns!!! O jogador vencedor foi: ");
         //procurando no for o único jogador que restou
         for (int i = 0; i < tabuleiro.getJogadores().length; i++) {
             if (tabuleiro.getJogadores()[i] != null) {
