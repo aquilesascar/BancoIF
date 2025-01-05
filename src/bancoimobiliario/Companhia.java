@@ -5,13 +5,12 @@ public class Companhia extends Propriedade {
     private int valorCompanhia;
     //Valor base do aluguel
     private int aluguel;
-    //Índice da companhia no tabuleiro
-    private int indice;
+
+
 
     public Companhia(int valorCompanhia, String nome, int aluguel, int indice) {
         super(nome, indice); //Chama o construtor da classe pai para inicializar nome e índice
         this.valorCompanhia = valorCompanhia; //Define o valor inicial da companhia
-        this.indice = indice; //Define o índice da companhia no tabuleiro
         this.aluguel = aluguel; //Define o valor base do aluguel
     }
 

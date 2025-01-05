@@ -25,6 +25,7 @@ public class  Jogo {
                     int dado = random.nextInt(6) + 1;
                     int dado2 = random.nextInt(6) + 1;
                     soma = dado + dado2;
+
                     System.out.println(tabuleiro.getJogadores()[i].getNome() + " tirou " + dado + " e " + dado2 + ". \nA soma é: " + soma);
                     //alterando a posição do jogador
                     tabuleiro.getJogadores()[i].alteraPosicao(soma);

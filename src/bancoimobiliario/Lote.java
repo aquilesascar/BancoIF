@@ -6,14 +6,14 @@ public class Lote extends Propriedade {
     private int valor; //Valor inicial de compra do lote
     private int aluguel; //Valor base do aluguel do lote
     private int melhoria; //Nível de melhoria do lote
-    private int indice; //Posição do lote no tabuleiro
+
 
     public Lote(int valor, String nome, int aluguel, int indice) {
         super(nome, indice); //Chama o construtor da classe pai para inicializar nome e índice
         this.valor = valor; //Define o valor inicial para compra do lote
         this.aluguel = aluguel; //Define o valor base do aluguel
         this.melhoria = 3; //Inicializa o nível de melhoria (pode ser ajustado)
-        this.indice = indice; //Define a posição do lote no tabuleiro
+
     }
 
     @Override
